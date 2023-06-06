@@ -1,0 +1,20 @@
+import java.util.Date;
+
+public class UsuarioPago extends Usuario {
+	private double valor;
+	
+	// Construtor de Usuário do plano pago
+	UsuarioPago(String nome, Date datanasc, String tipoPlano, double valor){
+		super(nome, datanasc, tipoPlano);
+		this.valor = valor;
+	}
+	
+	
+	// GETTERS
+	public double getValor() {
+		return valor;
+	}
+	
+	
+	
+}
