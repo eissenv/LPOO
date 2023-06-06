@@ -1,0 +1,11 @@
+import java.util.Date;
+
+public class UsuarioGratuito extends Usuario {
+	String anuncioAviso;
+	boolean anuncio; // No plano gratuito vai aparecer 1 anúncio a cada 2/3 músicas?
+		
+		// Construtor de Usuário do plano gratuito
+		UsuarioGratuito(String nome, Date datanasc, String tipoPlano){
+			super(nome, datanasc, tipoPlano);
+		}
+}
