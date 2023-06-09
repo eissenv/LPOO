@@ -1,4 +1,4 @@
-import java.util.Date; // Talvez criar um construtor para data em vez de usar import seja melhor
+import java.util.Date;
 
 abstract public class Usuario {
 	private String nome;
@@ -12,33 +12,42 @@ abstract public class Usuario {
 	private int seguidores;
 								
 	// Construtor de Usuário
-	Usuario(String nome, Date datanasc, String tipoPlano){
+	Usuario(String nome, String cpf, Date datanasc, String telefone, String email){
 		this.nome = nome;
+		this.cpf = cpf;
 		this.datanasc = datanasc;
-		this.tipoPlano = tipoPlano;
+		this.telefone = telefone;
+		this.email = email;
 	}
 	
-	// Método para retornar info de usuário
-	public String toString() {
-		return "Nome do usuário: " + nome + "Tipo de plano adquirido: " + tipoPlano;
-		}
-	
-	// SETTERS
-	void setTipoPlano(String tipoPlano) {
-		this.tipoPlano = tipoPlano;
-	}
-	
+
 	// GETTERS
 	public String getNome() {
 		return nome;
 	}
+	public String getCpf() {
+		return cpf;
+	}
 	public Date getDatanasc() {
 		return datanasc;
 	}
-	public String tipoPlano() {
-		return tipoPlano;
+	public String getTelefone() {
+		return telefone;
 	}
-	public String[] favoritas() {
-		return favoritas;
+	public String getEmail() {
+		return email;
+	}
+	public String[] getMusicasFavoritas() {
+		return musicasFavoritas;
+	}
+	public String[] getArtistasFavoritos() {
+		return artistasFavoritos;
+	}
+	public String[] getAlbunsFavoritos() {
+		return albunsFavoritos;
+	}
+	public int getSeguidores() {
+		return seguidores;
 	}
 }
+
