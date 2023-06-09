@@ -16,6 +16,7 @@ public class Artista extends Usuario {
     public void aumentarStreamings() {
         streamingsTotais++;
         valorGanho += 0.025f;
+	taxa += 0.10;
     }
     
 	// GETTERS
