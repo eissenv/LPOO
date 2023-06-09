@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.util.Date; // Talvez criar um construtor para data em vez de usar import seja melhor
 
 abstract public class Usuario {
 	private String nome;
