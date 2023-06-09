@@ -12,6 +12,9 @@ public class Main {
  - Método para aumentar/diminuir áudio. int audio = 100
  - Talvez tenhamos que crar um padrão para criação de codigos de cada classe que necessitar
  - Método para adicionar música em lista de reprodução
- - Artista: Método para adicionar músia em álbum
+ - Artista: Método para adicionar música em álbum
+ - Qtd de streamings
+ - Se albúm tiver apenas 1 música, é classificado como single
+
  
  */
