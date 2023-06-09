@@ -2,10 +2,15 @@ import java.util.Date; // Talvez criar um construtor para data em vez de usar im
 
 abstract public class Usuario {
 	private String nome;
+	private String cpf;
 	private Date datanasc;
-	private String tipoPlano;
-	private String[] favoritas; // Vai guardar o código da música favoritada
-								// Pensar em como vai ser esse código (String, int?)
+	private String telefone;
+	private String email;
+	private String[] musicasFavoritas;
+	private String[] artistasFavoritos;
+	private String[] albunsFavoritos;
+	private int seguidores;
+								
 	// Construtor de Usuário
 	Usuario(String nome, Date datanasc, String tipoPlano){
 		this.nome = nome;
