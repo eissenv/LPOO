@@ -1,3 +1,4 @@
+package Um;
 import java.util.Date;
 
 abstract public class Usuario {
@@ -6,18 +7,20 @@ abstract public class Usuario {
 	private Date datanasc;
 	private String telefone;
 	private String email;
+	private String tipoPlano;
 	private String[] musicasFavoritas;
 	private String[] artistasFavoritos;
 	private String[] albunsFavoritos;
 	private int seguidores;
 								
 	// Construtor de Usuário
-	Usuario(String nome, String cpf, Date datanasc, String telefone, String email){
+	Usuario(String nome, String cpf, Date datanasc, String telefone, String email, String tipoPlano){
 		this.nome = nome;
 		this.cpf = cpf;
 		this.datanasc = datanasc;
 		this.telefone = telefone;
 		this.email = email;
+		this.tipoPlano = tipoPlano;
 	}
 	
 
@@ -49,5 +52,10 @@ abstract public class Usuario {
 	public int getSeguidores() {
 		return seguidores;
 	}
+	public String getTipoPlano() {
+		return tipoPlano;
+	}
 }
+
+
 
