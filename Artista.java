@@ -1,5 +1,5 @@
-
 import java.util.Date;
+
 
 public class Artista extends Usuario {
 	private int streamingsTotais;
@@ -8,15 +8,15 @@ public class Artista extends Usuario {
 	private String[] albuns;
 	
 	// Construtor de Artista
-	Artista(String nome, String cpf, Date datanasc, String telefone, String email){
-		super(nome, cpf, datanasc, telefone, email);
+	Artista(String nome, String cpf, Date datanasc, String telefone, String email, String tipoPlano){
+		super(nome, cpf, datanasc, telefone, email, tipoPlano);
 	}
 	
 	 // Método para aumentar o valorGanho a cada streaming
     public void aumentarStreamings() {
         streamingsTotais++;
         valorGanho += 0.025f;
-	taxa += 0.10;
+        taxa += 0.10;
     }
     
 	// GETTERS
