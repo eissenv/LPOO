@@ -102,7 +102,7 @@ public class Usuario {
         return idade;
     }
     
-    // Imprime todos os alguns favoritos
+    // Imprime todos os albuns favoritos
     public void exibirAlbunsFavoritos() {
         List<Album> albunsFavoritos = getAlbunsFavoritos();
         if (!albunsFavoritos.isEmpty()) {
@@ -131,7 +131,7 @@ public class Usuario {
         }
     }
     
- // Imprime todos os artistas favoritos
+ // Imprime todos as musicas favoritas
     public void exibirMusicasFavoritas() {
         List<Musica> musicasFavoritas = getMusicasFavoritas();
         if (!musicasFavoritas.isEmpty()) {
