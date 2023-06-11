@@ -1,0 +1,46 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Album {
+	public String id;
+	private String nome;
+	private Artista artista;
+	private String dataLancamento;
+	private List<Musica> musicas;
+	
+	Album(String id, String nome, Artista artista, String dataLancamento){
+		if (!(artista instanceof Artista)) {
+            throw new IllegalArgumentException("Apenas uma conta do tipo artista pode criar um álbum.");
+        }else {
+		this.id = id;
+		this.nome = nome;
+		this.artista = artista;
+		this.dataLancamento = dataLancamento;
+		this.musicas = new ArrayList<>();
+	
+        }
+	}
+	
+	// Método para adicionar música ao álbum
+	public void adicionarMusica(Musica musica) {
+        musicas.add(musica);
+	}
+	
+	// GETTERS
+	public String getId() {
+		return id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	
+	public String getArtista() {
+		return artista.getNome();
+	}
+	
+	public String getDataLancamento() {
+        return dataLancamento;
+    }
+}
+
