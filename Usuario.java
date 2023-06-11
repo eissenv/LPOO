@@ -1,14 +1,16 @@
+package dev;
 import java.util.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Usuario {
     private String id;
     private String nome;
     private String cpf;
-    private String dataNascimento; // Alterado para String
+    private String dataNascimento;
     private String telefone;
     private String email;
     private String tipoPlano;
@@ -29,6 +31,9 @@ public class Usuario {
         this.telefone = telefone;
         this.email = email;
         this.tipoPlano = tipoPlano;
+        this.musicasFavoritas = new ArrayList<>();
+        this.albunsFavoritos = new ArrayList<>();
+        this.artistasFavoritos = new ArrayList<>();
 
         if (tipoPlano.equalsIgnoreCase("Pago")) {
             Pago planoPago = new Pago(metodoPagamento);
@@ -93,9 +98,56 @@ public class Usuario {
              dataAtual.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH))) {
             idade--;
         }
+        
         return idade;
     }
+    
+    // Imprime todos os alguns favoritos
+    public void exibirAlbunsFavoritos() {
+        List<Album> albunsFavoritos = getAlbunsFavoritos();
+        if (!albunsFavoritos.isEmpty()) {
+            System.out.println("Álbuns favoritos de " + nome + ":");
+            for (Album album : albunsFavoritos) {
+                System.out.println("Nome: " + album.getNome());
+                System.out.println("Artista: " + album.getArtista());
+                System.out.println();
+            }
+        } else {
+            System.out.println(nome + " ainda não adicionou nenhum álbum aos favoritos.");
+        }
+    }
+    
+ // Imprime todos os artistas favoritos
+    public void exibirArtistasFavoritos() {
+        List<Artista> artistasFavoritos = getArtistasFavoritos();
+        if (!artistasFavoritos.isEmpty()) {
+            System.out.println("Artistas favoritos de " + nome + ":");
+            for (Artista artista : artistasFavoritos) {
+                System.out.println("Nome: " + artista.getNome());
+                System.out.println();
+            }
+        } else {
+            System.out.println(nome + " ainda não adicionou nenhum artista aos favoritos.");
+        }
+    }
+    
+ // Imprime todos os artistas favoritos
+    public void exibirMusicasFavoritas() {
+        List<Musica> musicasFavoritas = getMusicasFavoritas();
+        if (!musicasFavoritas.isEmpty()) {
+            System.out.println("Músicas favoritas de " + nome + ":");
+            for (Musica musica : musicasFavoritas) {
+                System.out.println("Nome: " + musica.getNome());
+                System.out.println("Artista: " + musica.getArtista());
+                System.out.println("Gênero: " + musica.getGenero());
+                System.out.println();
+            }
+        } else {
+            System.out.println(nome + " ainda não adicionou nenhuma música aos favoritos.");
+        }
+    }
 
+    
 	// SETTERS
 	public void setMetodoPagamento(String metodoPagamento) {
         this.metodoPagamento = metodoPagamento;
@@ -144,8 +196,4 @@ public class Usuario {
         return sdf.format(dataNascimento);
     }
 }
-
-
-
-
 
